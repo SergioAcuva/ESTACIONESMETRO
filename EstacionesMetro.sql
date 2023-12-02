@@ -66,6 +66,3 @@ FROM nyc_subway_stations stations
 JOIN nyc_neighborhoods neighborhoods
 ON stations.geom && neighborhoods.geom
 WHERE neighborhoods.name = 'West Village';
-
-ogr2ogr -f 'PostgreSQL' PG:'dbname=LotesBogota host=localhost port=5432 user=postgres password=18PUNK@' 'LOTE.GEOJSON.0823.geojson' -nlt Multipolygon -lco FID=gid -lco GEOMETRY_NAME=geom 
-
